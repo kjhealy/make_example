@@ -1,14 +1,15 @@
 ---
-title:  "My Paper"
-author:
-- name: Kieran Healy
-  affiliation: Duke University
-  email: kieran.healy@duke.edu
-date: "October 2023"
+title: "My Paper"
+author: Kieran Healy
+figureTitle: |
+  Figure
+figPrefix: 
+  - "Figure"
+  - "Figures"
 ...
 
 This is my very short paper. 
 
-![There are so many mtcars figures.](fig1.pdf) {#fig:mtcars}
+![There are so many mtcars figures.](fig1.pdf){#fig:mtcars}
 
-Figure @fig:description shows an `mtcars` graph.
+@Fig:mtcars shows an `mtcars` graph.
