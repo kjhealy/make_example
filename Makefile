@@ -1,19 +1,31 @@
 # NOTE: install the pandoc-crossref filter if you don't already have it
 # e.g. brew install pandoc-crossref
 
-# The output file `mypaper.pdf` depends on `mypaper.md` and `fig1.pdf`
-mypaper.pdf: mypaper.md fig1.pdf 
-	pandoc -F pandoc-crossref mypaper.md -o mypaper.pdf
+# `fullpaper.pdf` depends on `tab1cap.md` and `fig1.pdf` existing
+fullpaper: fig1 tab1cap
+	cat mypaper.md tab1cap.md > fullpaper.md
+	pandoc -F pandoc-crossref fullpaper.md -o fullpaper.pdf
 
-# The output file `fig1.pdf` depends on `fig1.r`
-fig1.pdf: fig1.r
+#`fig1.pdf` depends on `fig1.r`
+fig1: fig1.r
 	R CMD BATCH fig1.r
 
+# `tab1cap.md` depends on tab1.md
+tab1cap: tab1
+	cat tab1.md tab_mtcars.label > tab1cap.md
+
+#`tab1.md` depends on `tab1.r`
+tab1: tab1.r
+	R CMD BATCH tab1.r
 
 # Clean target
 .PHONY: clean
 
 clean:
-	rm -f mypaper.pdf
+	rm -f fullpaper.pdf
+	rm -f fullpaper.md
 	rm -f fig1.pdf
 	rm -f fig1.r.Rout
+	rm -f tab1.md
+	rm -f tab1.r.Rout
+	rm -f .RData
