@@ -31,4 +31,4 @@ Eu summo lobortis vim, copiosae disputando ut eam. Ipsum impedit fabellas id usu
 
 Cu facer accusamus eum, nec debet eligendi prodesset ex. Pro et ludus invenire, nam choro veniam no. Nam consul scripta oblique eu, ornatus petentium consequat sea et. Et iuvaret mnesarchum pro. Ne consul ignota salutandi est, cum ut malorum discere, sit meliore petentium principes cu.
 
-![There are so many mtcars figures.](fig1.pdf){#fig:mtcars}
+![There are so many mtcars figures.](figures/mpg_vs_disp.pdf){#fig:mtcars}
